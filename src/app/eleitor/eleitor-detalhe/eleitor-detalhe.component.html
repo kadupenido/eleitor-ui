@@ -1,0 +1,370 @@
+<form [formGroup]="eleitorForm">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          DADOS
+        </div>
+        <div class="card-body">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="altura">Nome</label>
+                <input type="text" class="form-control" formControlName="nome">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="altura">CPF</label>
+                <input type="text" class="form-control" formControlName="cpf">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="altura">RG</label>
+                <input type="text" class="form-control" formControlName="rg">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="altura">Data de Nascimento</label>
+                <input type="text" class="form-control" formControlName="nascimento">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="altura">Sexo</label>
+                <select class="form-control" formControlName="sexo" required>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Feminino">Feminino</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="altura">Estado Civil</label>
+                <select class="form-control" formControlName="estadoCivil" required>
+                  <option value="Casado">Casado</option>
+                  <option value="União estavel">União estavel</option>
+                  <option value="Solteiro">Solteiro</option>
+                  <option value="Viúvo">Viúvo</option>
+                  <option value="Divorciado">Divorciado</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="altura">Nacionalidade</label>
+                <input type="text" class="form-control" formControlName="nacionalidade">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="altura">Naturalidade</label>
+                <input type="text" class="form-control" formControlName="naturalidade">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="altura">Titulo</label>
+                <input type="text" class="form-control" formControlName="titulo">
+              </div>
+            </div>
+            <div class="col-md-1">
+              <div class="form-group">
+                <label for="altura">Zona</label>
+                <input type="text" class="form-control" formControlName="zona">
+              </div>
+            </div>
+            <div class="col-md-1">
+              <div class="form-group">
+                <label for="altura">Seção</label>
+                <input type="text" class="form-control" formControlName="secao">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="altura">Telefone</label>
+                <input type="text" class="form-control" formControlName="telefone">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="altura">Celular</label>
+                <input type="text" class="form-control" formControlName="celular">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="altura">E-mail</label>
+                <input type="email" class="form-control" formControlName="email">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="altura">CNH</label>
+                <input type="text" class="form-control" formControlName="cnh">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="altura">Escolaridade</label>
+                <select class="form-control" formControlName="escolaridade">
+                  <option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
+                  <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
+                  <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
+                  <option value="Ensino Médio em Curso">Ensino Médio em Curso</option>
+                  <option value="Ensino Médio Completo">Ensino Médio Completo</option>
+                  <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+                  <option value="Ensino Superior em Curso">Ensino Superior em Curso</option>
+                  <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+                  <option value="Analfabeto">Analfabeto</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="altura">Obs.</label>
+                <textarea rows="5" class="form-control" formControlName="obs"></textarea>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="altura">Responsável</label>
+                <input type="text" class="form-control" formControlName="responsavel">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  ENDEREÇO
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="altura">Logradouro</label>
+                        <input type="text" class="form-control" formControlName="endereco">
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group">
+                        <label for="altura">Numero</label>
+                        <input type="text" class="form-control" formControlName="numero">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="altura">Complemento</label>
+                        <input type="text" class="form-control" formControlName="complemento">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="altura">Bairro</label>
+                        <input type="text" class="form-control" formControlName="bairro">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="altura">Município</label>
+                        <input type="text" class="form-control" formControlName="municipio">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="altura">CEP</label>
+                        <input type="text" class="form-control" formControlName="cep">
+                      </div>
+                    </div>
+                    <div class="col-md-1">
+                      <div class="form-group">
+                        <label for="altura">UF</label>
+                        <select class="form-control" formControlName="uf">
+                          <option value="AC">AC</option>
+                          <option value="AL">AL</option>
+                          <option value="AM">AM</option>
+                          <option value="AP">AP</option>
+                          <option value="BA">BA</option>
+                          <option value="CE">CE</option>
+                          <option value="DF">DF</option>
+                          <option value="ES">ES</option>
+                          <option value="GO">GO</option>
+                          <option value="MA">MA</option>
+                          <option value="MG">MG</option>
+                          <option value="MS">MS</option>
+                          <option value="MT">MT</option>
+                          <option value="PA">PA</option>
+                          <option value="PB">PB</option>
+                          <option value="PE">PE</option>
+                          <option value="PI">PI</option>
+                          <option value="PR">PR</option>
+                          <option value="RJ">RJ</option>
+                          <option value="RN">RN</option>
+                          <option value="RO">RO</option>
+                          <option value="RR">RR</option>
+                          <option value="RS">RS</option>
+                          <option value="SC">SC</option>
+                          <option value="SE">SE</option>
+                          <option value="SP">SP</option>
+                          <option value="TO">TO</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header">
+                  CURSOS
+                </div>
+                <div class="card-body" formArrayName="curso">
+                  <div class="row">
+
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Nome</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let c of eleitorForm.controls.curso.controls; let i = index;">
+                          <td>
+                            <button type="button" class="btn btn-outline-secondary" (click)="removerCurso(i);">
+                              <img src="/assets/trash.svg" alt="icon circle x" width="14px">
+                            </button>
+                          </td>
+                          <td>{{c.value.nome}}</td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <td></td>
+                          <td>
+                            <input type="text" #txtCurso class="form-control input-sm">
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-outline-secondary" (click)="novoCurso(txtCurso.value)">
+                              <img src="/assets/check.svg" alt="icon circle x" width="14px">
+                            </button>
+                          </td>
+                        </tr>
+                      </tfoot>
+                    </table>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header">
+                  EXPERIÊNCIAS
+                </div>
+                <div class="card-body" formArrayName="experiencia">
+                  <div class="row">
+
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Empresa</th>
+                          <th>Função</th>
+                          <th>Inicio</th>
+                          <th>Fim</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let e of eleitorForm.controls.experiencia.controls; let i = index;">
+                          <td>
+                            <button type="button" class="btn btn-outline-secondary" (click)="removerExperiencia(i);">
+                              <img src="/assets/trash.svg" alt="icon circle x" width="14px">
+                            </button>
+                          </td>
+                          <td>{{e.value.empresa}}</td>
+                          <td>{{e.value.funcao}}</td>
+                          <td>{{e.value.inicio}}</td>
+                          <td>{{e.value.fim}}</td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <td></td>
+                          <td><input type="text" #txtEmpresa class="form-control input-sm"></td>
+                          <td><input type="text" #txtFuncao class="form-control input-sm"></td>
+                          <td><input type="text" #txtInicio class="form-control input-sm"></td>
+                          <td><input type="text" #txtFim class="form-control input-sm"></td>
+                          <td>
+                            <button type="button" class="btn btn-outline-secondary"
+                              (click)="novaExperiencia(txtEmpresa.value, txtFuncao.value, txtInicio.value, txtFim.value)">
+                              <img src="/assets/check.svg" alt="icon circle x" width="14px">
+                            </button>
+                          </td>
+                        </tr>
+                      </tfoot>
+                    </table>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="row">
+            <div class="col-md-2">
+              <div class="form-group">
+                <button type="submit" (click)="onFormSubmit(eleitorForm.value);"
+                  class="btn btn-dark btn-block">SALVAR</button>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <button type="submit" (click)="onFormSubmit(eleitorForm.value);"
+                  class="btn btn-dark btn-block">IMPRIMIR</button>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <button type="submit" (click)="cancelar();" class="btn btn-dark btn-block">VOLTAR</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

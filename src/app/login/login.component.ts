@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { ToastrService } from 'ngx-toastr';
@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  @ViewChild('txtPassword') txtPassword;
 
   constructor(
     private toastr: ToastrService,
@@ -39,13 +40,14 @@ export class LoginComponent implements OnInit {
       .then(res => {
         this.spinnerService.hide();
         if (!res.success) {
+          this.loginForm.controls['password'].setValue('');
+          this.txtPassword.nativeElement.focus();
           this.showError();
         } else {
           this.router.navigate(['/']);
         }
-      }, (err) {
+      }, (err) => {
 
       })
   }
-
 }

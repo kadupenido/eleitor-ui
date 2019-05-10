@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard } from './../auth/auth-guard';
+import { EleitorDetalheComponent } from './eleitor-detalhe/eleitor-detalhe.component';
 import { EleitorComponent } from './eleitor.component';
 
 const routes: Routes = [
-  { path: 'eleitores', component: EleitorComponent, canActivate: [AuthGuard] }
+  { path: 'eleitores', component: EleitorComponent, canActivate: [AuthGuard] },
+  { path: 'eleitor/:id', component: EleitorDetalheComponent, canActivate: [AuthGuard] },
+  { path: 'eleitor', component: EleitorDetalheComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

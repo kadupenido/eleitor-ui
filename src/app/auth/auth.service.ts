@@ -19,6 +19,8 @@ export class AuthService {
 
     return this.http.post(url, body).toPromise().then((res: any) => {
 
+      if (!res.success) return false;
+
       sessionStorage.setItem('iL', res.token);
 
       return {
