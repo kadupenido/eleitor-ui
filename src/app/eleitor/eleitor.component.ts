@@ -1,10 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 
 import { EleitorService } from './eleitor.service';
-import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
-import { ToastrService } from 'ngx-toastr';
-import { Console } from '@angular/core/src/console';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-eleitor',
@@ -18,19 +19,23 @@ export class EleitorComponent implements OnInit, OnDestroy {
   page: number = 1;
   previousPage: number;
   total: number;
+  buscaForm: FormGroup;
 
   constructor(
     private eleitorService: EleitorService,
     private spinnerService: Ng4LoadingSpinnerService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private fb: FormBuilder,
+    private router: Router, ) { }
 
   ngOnInit() {
+    this.createForm();
     this.buscarEleitores();
   }
 
   buscarEleitores() {
     this.spinnerService.show();
-    this.subs.push(this.eleitorService.getEleitores(this.page)
+    this.subs.push(this.eleitorService.getEleitores(this.page, this.buscaForm.value)
       .subscribe((data: any) => {
         this.eleitores = data.docs;
         this.page = data.page;
@@ -65,6 +70,42 @@ export class EleitorComponent implements OnInit, OnDestroy {
 
       )
     }
+  }
+
+  createForm() {
+    this.buscaForm = this.fb.group({
+      nome: [''],
+      cpf: [''],
+      rg: [''],
+      nascimento: [''],
+      sexo: [''],
+      estadoCivil: [''],
+      nacionalidade: [''],
+      naturalidade: [''],
+      titulo: [''],
+      zona: [''],
+      secao: [''],
+      telefone: [''],
+      celular: [''],
+      email: [''],
+      cnh: [''],
+      endereco: [''],
+      numero: [''],
+      complemento: [''],
+      bairro: [''],
+      municipio: [''],
+      cep: [''],
+      uf: [''],
+      escolaridade: [''],
+      obs: [''],
+      responsavel: [''],
+      curso: this.fb.array([]),
+      experiencia: this.fb.array([])
+    });
+  }
+
+  imprimir(id: string) {
+    this.router.navigate(['/impressao', id]);
   }
 
 }

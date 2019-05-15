@@ -11,14 +11,13 @@ export class EleitorService {
 
   constructor(private http: HttpClient) { }
 
-  getEleitores(page: number) {
+  getEleitores(page: number, filtro: any) {
 
     const url = `${this.baseUrl}/`;
 
     const body = {
       page: page,
-      filters: {
-      },
+      filters: filtro,
       sort: {
         nome: 'asc'
       }

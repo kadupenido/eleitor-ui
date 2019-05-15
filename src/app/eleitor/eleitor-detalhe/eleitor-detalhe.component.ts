@@ -34,8 +34,8 @@ export class EleitorDetalheComponent implements OnInit, OnDestroy {
     private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.createForm();
     this.spinnerService.show();
+    this.createForm();
     this.subs.push(
       this.route.params.subscribe(params => {
         this._id = params['id'];
