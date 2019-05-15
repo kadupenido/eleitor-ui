@@ -150,6 +150,11 @@ export class EleitorDetalheComponent implements OnInit, OnDestroy {
     cursos.removeAt(index);
   }
 
+  cursoControls() {
+    const cursos = <FormArray>this.eleitorForm.controls['experiencia'];
+    return cursos.controls;
+  }
+
   novaExperiencia(empresa: string, funcao: string, inicio: string, fim: string) {
 
     const experiencias = <FormArray>this.eleitorForm.controls['experiencia'];
@@ -170,6 +175,11 @@ export class EleitorDetalheComponent implements OnInit, OnDestroy {
   removerExperiencia(index: number) {
     const experiencias = <FormArray>this.eleitorForm.controls['experiencia'];
     experiencias.removeAt(index);
+  }
+
+  experienciaControls() {
+    const experiencias = <FormArray>this.eleitorForm.controls['experiencia'];
+    return experiencias.controls;
   }
 
   cancelar() {
