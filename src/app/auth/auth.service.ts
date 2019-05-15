@@ -21,7 +21,7 @@ export class AuthService {
 
       if (!res.success) return false;
 
-      sessionStorage.setItem('iL', res.token);
+      localStorage.setItem('iL', res.token);
 
       return {
         success: true
@@ -45,7 +45,7 @@ export class AuthService {
   }
 
   public getToken(): any {
-    return sessionStorage.getItem('iL');
+    return localStorage.getItem('iL');
   }
 
   private destroyToken(): any {

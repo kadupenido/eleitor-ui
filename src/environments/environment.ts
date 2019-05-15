@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://eleitor.herokuapp.com'
+  baseUrl: '//localhost:3000'
 };
 
 /*
