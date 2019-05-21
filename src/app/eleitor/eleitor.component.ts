@@ -17,7 +17,7 @@ export class EleitorComponent implements OnInit, OnDestroy {
 
   subs: Subscription[] = [];
   eleitores: any;
-  page: number = 1;
+  page = 1;
   previousPage: number;
   total: number;
   buscaForm: FormGroup;
@@ -70,7 +70,7 @@ export class EleitorComponent implements OnInit, OnDestroy {
           this.toastr.error(err.message || err, 'Falha ao remover eleitor!');
         })
 
-      )
+      );
     }
   }
 
@@ -101,7 +101,7 @@ export class EleitorComponent implements OnInit, OnDestroy {
       escolaridade: [''],
       obs: [''],
       responsavel: [''],
-      curso: this.fb.array([]),
+      curso: [''],
       experiencia: this.fb.array([])
     });
   }
@@ -124,13 +124,13 @@ export class EleitorComponent implements OnInit, OnDestroy {
 
   imprimirPdf() {
 
-    let doc = new jspdf('p', 'mm', 'a4');
+    const doc = new jspdf('p', 'mm', 'a4');
     let atualHeight = 0;
 
     doc.setFontSize(22);
     doc.setFontStyle('bold');
     atualHeight += 25;
-    doc.text(this.eleitor.nome.toUpperCase(), 105, atualHeight, { align: "center" });
+    doc.text(this.eleitor.nome.toUpperCase(), 105, atualHeight, { align: 'center' });
 
     doc.setFontSize(12);
     doc.setFontStyle('bold');
@@ -182,7 +182,7 @@ export class EleitorComponent implements OnInit, OnDestroy {
     doc.setFontSize(16);
     doc.setFontStyle('bold');
     atualHeight += 20;
-    doc.text('Formação Acadêmica', 105, atualHeight, { align: "center" });
+    doc.text('Formação Acadêmica', 105, atualHeight, { align: 'center' });
 
     if (this.eleitor.escolaridade) {
       doc.setFontSize(11);
@@ -194,7 +194,7 @@ export class EleitorComponent implements OnInit, OnDestroy {
     doc.setFontSize(16);
     doc.setFontStyle('bold');
     atualHeight += 15;
-    doc.text('Cursos', 105, atualHeight, { align: "center" });
+    doc.text('Cursos', 105, atualHeight, { align: 'center' });
 
     atualHeight += 5;
     this.eleitor.curso.forEach(c => {
@@ -207,7 +207,7 @@ export class EleitorComponent implements OnInit, OnDestroy {
     doc.setFontSize(16);
     doc.setFontStyle('bold');
     atualHeight += 15;
-    doc.text('Experiências Profissionais', 105, atualHeight, { align: "center" });
+    doc.text('Experiências Profissionais', 105, atualHeight, { align: 'center' });
 
     atualHeight += 10;
     this.eleitor.experiencia.forEach(e => {
@@ -245,7 +245,7 @@ export class EleitorComponent implements OnInit, OnDestroy {
     doc.setFontSize(16);
     doc.setFontStyle('bold');
     atualHeight += 10;
-    doc.text('Observações', 105, atualHeight, { align: "center" });
+    doc.text('Observações', 105, atualHeight, { align: 'center' });
 
     doc.setFontSize(11);
     doc.setFontStyle('normal');
